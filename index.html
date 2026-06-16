@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en" id="top">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Matthew Goins — Web Design for Local Business</title>
+<meta name="description" content="Matthew Goins builds fast, beautiful websites for local shops, restaurants, and service businesses in Central Virginia — with a free preview before you pay a cent.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#F4F1EA;
+  --paper-2:#E8E3D8;
+  --cream:#FBFAF6;
+  --ink:#16140E;
+  --ink-2:#1B1915;
+  --ink-soft:#56524A;
+  --accent:#FF5A36;
+  --accent-deep:#DC421E;
+  --line:rgba(22,20,14,.13);
+  --line-dark:rgba(244,241,234,.16);
+  --display:'Space Grotesk',-apple-system,sans-serif;
+  --body:'Inter',-apple-system,'Segoe UI',sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:88px}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation:none!important;transition:none!important}}
+body{font-family:var(--body);font-size:16.5px;line-height:1.6;color:var(--ink);background:var(--paper);overflow-x:clip}
+a{color:inherit;text-decoration:none}
+img,svg,iframe{display:block;max-width:100%}
+.wrap{max-width:1140px;margin:0 auto;padding:0 26px}
+::selection{background:var(--accent);color:#fff}
+
+h1,h2,h3{font-family:var(--display);font-weight:600;line-height:1.04;letter-spacing:-.02em}
+h2{font-size:clamp(2rem,4.2vw,3.1rem)}
+h3{font-size:1.22rem;letter-spacing:-.01em}
+.eyebrow{font:600 12.5px/1 var(--display);letter-spacing:.16em;text-transform:uppercase;color:var(--accent);display:inline-flex;align-items:center;gap:10px}
+.eyebrow::before{content:"";width:24px;height:2px;background:var(--accent)}
+.lede{font-size:1.14rem;color:var(--ink-soft);max-width:60ch}
+
+.btn{display:inline-flex;align-items:center;gap:9px;font:600 14.5px/1 var(--body);letter-spacing:.01em;padding:15px 24px;border-radius:8px;cursor:pointer;border:1.5px solid transparent;transition:background-color .2s,color .2s,border-color .2s,transform .2s}
+.btn svg{width:16px;height:16px;flex:none}
+.btn-accent{background:var(--accent);color:#fff;border-color:var(--accent)}
+.btn-accent:hover{background:var(--accent-deep);border-color:var(--accent-deep);transform:translateY(-2px)}
+.btn-ink{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.btn-ink:hover{background:var(--ink-2);transform:translateY(-2px)}
+.btn-outline{background:transparent;color:var(--ink);border-color:var(--ink)}
+.btn-outline:hover{background:var(--ink);color:var(--paper);transform:translateY(-2px)}
+.btn-ghost-light{background:transparent;color:var(--paper);border-color:var(--line-dark)}
+.btn-ghost-light:hover{border-color:var(--accent);color:var(--accent)}
+:focus-visible{outline:2.5px solid var(--accent);outline-offset:3px;border-radius:4px}
+
+/* nav */
+.nav{position:sticky;top:0;z-index:50;background:rgba(244,241,234,.88);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.nav-inner{display:flex;align-items:center;gap:24px;height:70px}
+.brand{display:flex;align-items:center;gap:11px;font-family:var(--display);font-weight:600;font-size:1.12rem;letter-spacing:-.01em}
+.brand .mk{width:34px;height:34px;flex:none;background:var(--ink);color:var(--paper);border-radius:8px;display:grid;place-items:center;font-weight:700;font-size:15px}
+.brand .mk b{color:var(--accent)}
+.nav-links{display:flex;gap:4px;list-style:none;margin-left:auto}
+.nav-links a{font:600 14px/1 var(--body);color:var(--ink);padding:10px 13px;border-radius:7px;transition:background-color .18s,color .18s}
+.nav-links a:hover{background:var(--paper-2);color:var(--accent-deep)}
+.nav-cta{margin-left:8px}
+.nav-toggle{display:none;margin-left:auto;background:none;border:1px solid var(--line);border-radius:8px;padding:9px;cursor:pointer}
+.nav-toggle svg{width:20px;height:20px;stroke:var(--ink);fill:none;stroke-width:2}
+@media(max-width:860px){
+  .nav-links{display:none}
+  .nav-toggle{display:block}
+  .nav-links.open{display:flex;position:absolute;top:70px;left:0;right:0;flex-direction:column;background:var(--paper);border-bottom:1px solid var(--line);padding:10px 26px 18px;margin:0}
+  .nav-links.open a{padding:13px 8px;font-size:16px;border-bottom:1px solid var(--line)}
+  .nav-links.open .nav-cta{margin:12px 0 0}
+}
+
+/* hero */
+.hero{position:relative;overflow:hidden;padding:96px 0 80px}
+.hero::before{content:"";position:absolute;top:-180px;right:-160px;width:520px;height:520px;border-radius:50%;background:radial-gradient(circle,rgba(255,90,54,.16),transparent 68%);pointer-events:none}
+.hero-inner{position:relative;max-width:960px}
+.avail{display:inline-flex;align-items:center;gap:9px;font:600 12.5px/1 var(--body);letter-spacing:.02em;color:var(--ink-soft);background:var(--cream);border:1px solid var(--line);border-radius:999px;padding:8px 14px;margin-bottom:26px}
+.avail .dot{width:8px;height:8px;border-radius:50%;background:#2ECC71;box-shadow:0 0 0 3px rgba(46,204,113,.2)}
+.hero h1{font-size:clamp(2.6rem,6.4vw,4.7rem);font-weight:600;letter-spacing:-.03em;max-width:16ch}
+.hero h1 .hl{color:var(--accent)}
+.hero-sub{margin:26px 0 32px;font-size:1.24rem;color:var(--ink-soft);max-width:54ch}
+.hero-ctas{display:flex;flex-wrap:wrap;gap:13px;margin-bottom:30px}
+.hero-meta{display:flex;flex-wrap:wrap;gap:10px 22px;align-items:center;font:600 13.5px/1.3 var(--body);color:var(--ink-soft)}
+.hero-meta span{display:inline-flex;align-items:center;gap:8px}
+.hero-meta svg{width:17px;height:17px;stroke:var(--accent);fill:none;stroke-width:2}
+
+/* section chrome */
+section{padding:80px 0}
+.sec-head{max-width:660px;margin-bottom:44px}
+.sec-head .lede{margin-top:14px}
+.dark{background:var(--ink);color:var(--paper)}
+.dark h2{color:var(--paper)}.dark .lede,.dark p{color:#C6C1B5}
+.dark .eyebrow{color:var(--accent)}
+
+/* work */
+.work-grid{display:grid;grid-template-columns:1fr 1fr;gap:26px}
+.project{display:flex;flex-direction:column;background:var(--cream);border:1px solid var(--line);border-radius:16px;overflow:hidden;transition:transform .25s,box-shadow .25s}
+.project:hover{transform:translateY(-5px);box-shadow:0 20px 50px rgba(22,20,14,.13)}
+.browser{display:flex;align-items:center;gap:8px;padding:11px 14px;background:var(--paper-2);border-bottom:1px solid var(--line)}
+.browser .dots{display:flex;gap:6px}
+.browser .dots i{width:11px;height:11px;border-radius:50%;background:#cfc8b8;display:block}
+.browser .url{flex:1;font:600 12px/1 var(--body);color:var(--ink-soft);background:var(--cream);border-radius:6px;padding:7px 11px;text-align:center;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.thumb{position:relative;width:100%;aspect-ratio:16/10;overflow:hidden;background:var(--ink);border-bottom:1px solid var(--line)}
+.thumb iframe{position:absolute;top:0;left:0;width:285.714%;height:285.714%;max-width:none;border:0;transform:scale(.35);transform-origin:top left;pointer-events:none}
+.thumb-overlay{position:absolute;inset:0;display:grid;place-items:center;background:rgba(22,20,14,.0);opacity:0;transition:opacity .22s,background-color .22s}
+.project:hover .thumb-overlay{opacity:1;background:rgba(22,20,14,.42)}
+.thumb-overlay .pill{display:inline-flex;align-items:center;gap:8px;background:var(--accent);color:#fff;font:600 14px/1 var(--body);padding:13px 20px;border-radius:999px;transform:translateY(8px);transition:transform .22s}
+.project:hover .thumb-overlay .pill{transform:none}
+.thumb-overlay .pill svg{width:15px;height:15px;stroke:currentColor;fill:none;stroke-width:2.2}
+.project-body{padding:22px 24px 26px;display:flex;flex-direction:column;flex:1}
+.project-body .ptag{font:600 11.5px/1 var(--display);letter-spacing:.12em;text-transform:uppercase;color:var(--accent);margin-bottom:9px}
+.project-body h3{font-size:1.32rem;margin-bottom:7px}
+.project-body p{font-size:.97rem;color:var(--ink-soft);flex:1}
+.tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}
+.tags span{font:600 12px/1 var(--body);color:var(--ink-soft);background:var(--paper);border:1px solid var(--line);border-radius:999px;padding:7px 12px}
+.project-link{margin-top:20px;display:inline-flex;align-items:center;gap:8px;font:600 14px/1 var(--body);color:var(--accent-deep);transition:gap .2s}
+.project-link svg{width:15px;height:15px;stroke:currentColor;fill:none;stroke-width:2}
+.project-link:hover{gap:12px}
+/* "your business" card */
+.project.cta-card{background:var(--ink);color:var(--paper);justify-content:center;align-items:flex-start;padding:38px 32px;border-color:var(--ink)}
+.project.cta-card:hover{transform:translateY(-5px)}
+.project.cta-card h3{color:var(--paper);font-size:1.6rem;margin-bottom:12px;max-width:14ch}
+.project.cta-card p{color:#C6C1B5;margin-bottom:24px;max-width:34ch}
+@media(max-width:780px){.work-grid{grid-template-columns:1fr}}
+
+/* services */
+.svc-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.svc{padding:28px 24px;background:var(--cream);border:1px solid var(--line);border-radius:14px;transition:transform .2s,border-color .2s}
+.svc:hover{transform:translateY(-4px);border-color:var(--accent)}
+.svc .ico{width:46px;height:46px;border-radius:11px;background:rgba(255,90,54,.12);display:grid;place-items:center;margin-bottom:18px}
+.svc .ico svg{width:23px;height:23px;stroke:var(--accent-deep);fill:none;stroke-width:1.8}
+.svc h3{font-size:1.1rem;margin-bottom:7px}
+.svc p{font-size:.93rem;color:var(--ink-soft)}
+@media(max-width:880px){.svc-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:480px){.svc-grid{grid-template-columns:1fr}}
+
+/* process */
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;counter-reset:step}
+.step{position:relative;padding:30px 26px;background:rgba(244,241,234,.05);border:1px solid var(--line-dark);border-radius:14px}
+.step .n{font-family:var(--display);font-weight:700;font-size:2.4rem;color:var(--accent);line-height:1;letter-spacing:-.03em}
+.step h3{color:var(--paper);margin:14px 0 8px;font-size:1.18rem}
+.step p{font-size:.96rem}
+@media(max-width:780px){.steps{grid-template-columns:1fr}}
+
+/* about */
+.about{display:grid;grid-template-columns:.85fr 1.15fr;gap:56px;align-items:center}
+.about-card{aspect-ratio:4/5;border-radius:18px;background:linear-gradient(150deg,var(--accent),var(--accent-deep));display:grid;place-items:center;position:relative;overflow:hidden}
+.about-card .mono{font-family:var(--display);font-weight:700;font-size:clamp(4rem,14vw,8rem);color:rgba(255,255,255,.92);letter-spacing:-.04em}
+.about-card::after{content:"";position:absolute;inset:0;background:radial-gradient(circle at 30% 20%,rgba(255,255,255,.18),transparent 55%);z-index:1}
+.about-photo{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 26%;z-index:2}
+.about p+p{margin-top:16px}
+@media(max-width:760px){.about{grid-template-columns:1fr;gap:34px}.about-card{max-width:260px}}
+
+/* contact */
+.contact-grid{display:grid;grid-template-columns:.95fr 1.05fr;gap:54px;align-items:start}
+.contact-info .line{display:flex;align-items:center;gap:14px;padding:16px 0;border-bottom:1px solid var(--line-dark)}
+.contact-info .line:first-of-type{border-top:1px solid var(--line-dark)}
+.contact-info .line svg{width:20px;height:20px;stroke:var(--accent);fill:none;stroke-width:1.8;flex:none}
+.contact-info .line b{display:block;font:600 12px/1 var(--body);letter-spacing:.1em;text-transform:uppercase;color:#9c968a;margin-bottom:4px}
+.contact-info .line a,.contact-info .line span{font:600 1.05rem/1.3 var(--body);color:var(--paper)}
+.contact-form{background:rgba(244,241,234,.05);border:1px solid var(--line-dark);border-radius:16px;padding:30px;display:grid;gap:16px}
+.contact-form .row{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.contact-form label{font:600 12px/1 var(--body);letter-spacing:.08em;text-transform:uppercase;color:#9c968a;display:block;margin-bottom:7px}
+.contact-form input,.contact-form textarea{width:100%;font:500 15px/1.5 var(--body);color:var(--paper);background:rgba(244,241,234,.06);border:1.5px solid var(--line-dark);border-radius:9px;padding:12px 14px}
+.contact-form input::placeholder,.contact-form textarea::placeholder{color:#7c776c}
+.contact-form input:focus,.contact-form textarea:focus{outline:none;border-color:var(--accent)}
+@media(max-width:780px){.contact-grid{grid-template-columns:1fr;gap:34px}.contact-form .row{grid-template-columns:1fr}}
+
+/* footer */
+footer{background:var(--ink-2);color:#9c968a;padding:44px 0;border-top:1px solid var(--line-dark)}
+.foot{display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap}
+.foot .brand{color:var(--paper)}
+.foot a:hover{color:var(--accent)}
+.foot .fr{font:500 13px/1.5 var(--body)}
+</style>
+</head>
+<body>
+
+<nav class="nav" aria-label="Primary">
+  <div class="wrap nav-inner">
+    <a class="brand" href="#top"><span class="mk">M<b>G</b></span> Matthew Goins</a>
+    <button class="nav-toggle" aria-expanded="false" aria-controls="navlinks" aria-label="Menu"><svg viewBox="0 0 24 24"><path d="M3 6h18M3 12h18M3 18h18"/></svg></button>
+    <ul class="nav-links" id="navlinks">
+      <li><a href="#work">Work</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#process">Process</a></li>
+      <li><a href="#about">About</a></li>
+      <li class="nav-cta"><a class="btn btn-accent" href="#contact">Get a free preview</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap hero-inner">
+    <span class="avail"><span class="dot"></span>Taking on new clients · Central Virginia</span>
+    <h1>Websites for the local businesses that <span class="hl">don't have one yet.</span></h1>
+    <p class="hero-sub">I'm Matthew Goins. I build fast, beautiful websites for local shops, restaurants, and service businesses — and I'll show you yours before you pay a cent.</p>
+    <div class="hero-ctas">
+      <a class="btn btn-ink" href="#work">See my work
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></a>
+      <a class="btn btn-outline" href="#contact">Start a free preview</a>
+    </div>
+    <div class="hero-meta">
+      <span><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>Free preview first</span>
+      <span><svg viewBox="0 0 24 24"><path d="M12 7v5l3 2M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"/></svg>Built in days, not months</span>
+      <span><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>The site is yours to keep</span>
+    </div>
+  </div>
+</header>
+
+<main>
+
+<!-- WORK -->
+<section id="work">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Recent work</span>
+      <h2 style="margin-top:14px">Sites I've designed &amp; built</h2>
+      <p class="lede">Real, responsive websites — hover to preview, click to open the live site.</p>
+    </div>
+    <div class="work-grid">
+
+      <article class="project">
+        <div class="browser"><span class="dots"><i></i><i></i><i></i></span><span class="url">theinwoodrestaurant.com</span></div>
+        <a class="thumb" href="inwood-website/index.html" target="_blank" rel="noopener" aria-label="Open the Inwood Restaurant site">
+          <iframe src="inwood-website/index.html" title="Inwood Restaurant website preview" scrolling="no" tabindex="-1" aria-hidden="true"></iframe>
+          <span class="thumb-overlay"><span class="pill">View live site <svg viewBox="0 0 24 24"><path d="M7 17 17 7M7 7h10v10"/></svg></span></span>
+        </a>
+        <div class="project-body">
+          <span class="ptag">Restaurant · Local diner</span>
+          <h3>The Inwood</h3>
+          <p>A warm classic-diner site for a 53-year family restaurant — chalkboard specials, a filterable menu, and a live "open now" indicator that updates itself.</p>
+          <div class="tags"><span>Filterable menu</span><span>Live hours</span><span>Responsive</span></div>
+          <a class="project-link" href="inwood-website/index.html" target="_blank" rel="noopener">Open live site <svg viewBox="0 0 24 24"><path d="M7 17 17 7M7 7h10v10"/></svg></a>
+        </div>
+      </article>
+
+      <article class="project">
+        <div class="browser"><span class="dots"><i></i><i></i><i></i></span><span class="url">davidmcbride.com</span></div>
+        <a class="thumb" href="david-mcbride-website/index.html" target="_blank" rel="noopener" aria-label="Open the David McBride site">
+          <iframe src="david-mcbride-website/index.html" title="David McBride website preview" scrolling="no" tabindex="-1" aria-hidden="true"></iframe>
+          <span class="thumb-overlay"><span class="pill">View live site <svg viewBox="0 0 24 24"><path d="M7 17 17 7M7 7h10v10"/></svg></span></span>
+        </a>
+        <div class="project-body">
+          <span class="ptag">Personal brand · Thought leadership</span>
+          <h3>David McBride</h3>
+          <p>A one-page platform for an enterprise transformation leader — repositioning a résumé site into a speaking, research, and book platform around his framework.</p>
+          <div class="tags"><span>One-page</span><span>Custom framework graphic</span><span>Responsive</span></div>
+          <a class="project-link" href="david-mcbride-website/index.html" target="_blank" rel="noopener">Open live site <svg viewBox="0 0 24 24"><path d="M7 17 17 7M7 7h10v10"/></svg></a>
+        </div>
+      </article>
+
+      <article class="project">
+        <div class="browser"><span class="dots"><i></i><i></i><i></i></span><span class="url">biostarus.com</span></div>
+        <a class="thumb" href="biostar-website/index.html" target="_blank" rel="noopener" aria-label="Open the BioStar site">
+          <iframe src="biostar-website/index.html" title="BioStar website preview" scrolling="no" tabindex="-1" aria-hidden="true"></iframe>
+          <span class="thumb-overlay"><span class="pill">View live site <svg viewBox="0 0 24 24"><path d="M7 17 17 7M7 7h10v10"/></svg></span></span>
+        </a>
+        <div class="project-body">
+          <span class="ptag">E-commerce · Brand (concept)</span>
+          <h3>BioStar US</h3>
+          <p>A full storefront concept for a whole-food horse &amp; dog supplement brand — apothecary product cards, shop-by-need, and an editorial botanical identity.</p>
+          <div class="tags"><span>Storefront</span><span>Brand identity</span><span>Responsive</span></div>
+          <a class="project-link" href="biostar-website/index.html" target="_blank" rel="noopener">Open live site <svg viewBox="0 0 24 24"><path d="M7 17 17 7M7 7h10v10"/></svg></a>
+        </div>
+      </article>
+
+      <article class="project cta-card">
+        <h3>Your business could be next.</h3>
+        <p>Want to see your shop as a real website — for free, no commitment? I'll build a preview and send you the link.</p>
+        <a class="btn btn-accent" href="#contact">Get my free preview
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></a>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services" style="background:var(--paper-2)">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">What I do</span>
+      <h2 style="margin-top:14px">Simple websites, done right</h2>
+    </div>
+    <div class="svc-grid">
+      <div class="svc">
+        <span class="ico"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M3 9h18M8 21h8"/></svg></span>
+        <h3>New websites</h3>
+        <p>A clean, mobile-friendly site for businesses going online for the first time.</p>
+      </div>
+      <div class="svc">
+        <span class="ico"><svg viewBox="0 0 24 24"><path d="M4 12a8 8 0 0 1 14-5M20 12a8 8 0 0 1-14 5M17 6h2V4M7 18H5v2"/></svg></span>
+        <h3>Redesigns</h3>
+        <p>Already have a site that feels dated or won't work on phones? I'll modernize it.</p>
+      </div>
+      <div class="svc">
+        <span class="ico"><svg viewBox="0 0 24 24"><path d="M12 3l2.5 5 5.5.8-4 3.9.9 5.5L12 16l-4.9 2.2.9-5.5-4-3.9 5.5-.8L12 3Z"/></svg></span>
+        <h3>Free preview first</h3>
+        <p>I build a real homepage before you commit. You only pay if you love it.</p>
+      </div>
+      <div class="svc">
+        <span class="ico"><svg viewBox="0 0 24 24"><path d="M4 7h16v10H4zM4 7l8 6 8-6"/></svg></span>
+        <h3>Hosting &amp; domain</h3>
+        <p>I set up your domain, hosting, and email links — all handled for you.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section id="process" class="dark">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">How it works</span>
+      <h2 style="margin-top:14px">Three steps, no risk</h2>
+    </div>
+    <div class="steps">
+      <div class="step">
+        <span class="n">01</span>
+        <h3>We talk</h3>
+        <p>A quick 15-minute chat — what you do, who your customers are, and what you want the site to say.</p>
+      </div>
+      <div class="step">
+        <span class="n">02</span>
+        <h3>I build a free preview</h3>
+        <p>A real homepage with your name, photos, and info — not a rough mockup. I send you the live link.</p>
+      </div>
+      <div class="step">
+        <span class="n">03</span>
+        <h3>You launch</h3>
+        <p>Love it? I set up your domain and hosting and put it live. The site is yours to keep.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="wrap about">
+    <div class="about-card"><span class="mono" aria-hidden="true">MG</span><img class="about-photo" src="me.jpg" alt="Matthew Goins" onerror="this.remove()"></div>
+    <div>
+      <span class="eyebrow">About</span>
+      <h2 style="margin:14px 0 18px">Hi, I'm Matthew.</h2>
+      <p class="lede">I help local businesses that have been getting by on a Facebook page finally get a real website — without the agency price tag or the months of waiting.</p>
+      <p>Based in Central Virginia, I work with the shops, restaurants, and service businesses I know and pass every day. Every project starts with a free preview, so you see exactly what you're getting before you decide anything. No jargon, no pressure — just a site you're proud to send people to.</p>
+      <div style="margin-top:26px"><a class="btn btn-accent" href="#contact">Let's talk
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></a></div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="dark">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Get in touch</span>
+      <h2 style="margin-top:14px">Let's build your site</h2>
+      <p class="lede">Tell me about your business and I'll put together a free preview — no cost, no commitment.</p>
+    </div>
+    <div class="contact-grid">
+      <div class="contact-info">
+        <div class="line"><svg viewBox="0 0 24 24"><path d="M4 5c0 8 7 15 15 15l-2.5-3.5-3 1c-2.5-1.3-4.7-3.5-6-6l1-3L5 5Z"/></svg><span><b>Call or text</b><a href="tel:16062695942">(606) 269-5942</a></span></div>
+        <div class="line"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3.5 7 8.5 6 8.5-6"/></svg><span><b>Email</b><a href="mailto:mattgoinsprob@gmail.com">mattgoinsprob@gmail.com</a></span></div>
+        <div class="line"><svg viewBox="0 0 24 24"><path d="M12 21s-7-4.5-7-10a7 7 0 0 1 14 0c0 5.5-7 10-7 10Z"/><circle cx="12" cy="11" r="2.5"/></svg><span><b>Based in</b><span>Central Virginia</span></span></div>
+      </div>
+      <form class="contact-form" action="#" method="post" aria-label="Contact form">
+        <div class="row">
+          <div><label for="cf-name">Name</label><input id="cf-name" name="name" type="text" placeholder="Your name" required></div>
+          <div><label for="cf-biz">Business</label><input id="cf-biz" name="business" type="text" placeholder="Your business"></div>
+        </div>
+        <div><label for="cf-contact">Phone or email</label><input id="cf-contact" name="contact" type="text" placeholder="How can I reach you?" required></div>
+        <div><label for="cf-msg">What do you need?</label><textarea id="cf-msg" name="message" rows="4" placeholder="Tell me a bit about your business and what you're looking for."></textarea></div>
+        <button class="btn btn-accent" type="submit" style="justify-content:center">Send &amp; get my free preview</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap foot">
+    <a class="brand" href="#top"><span class="mk">M<b>G</b></span> Matthew Goins</a>
+    <span class="fr">Web design for local business · Central Virginia · © 2026 Matthew Goins</span>
+    <span class="fr"><a href="tel:16062695942">(606) 269-5942</a> · <a href="mailto:mattgoinsprob@gmail.com">mattgoinsprob@gmail.com</a></span>
+  </div>
+</footer>
+
+<script>
+const toggle=document.querySelector('.nav-toggle');
+const links=document.getElementById('navlinks');
+toggle.addEventListener('click',()=>{const o=links.classList.toggle('open');toggle.setAttribute('aria-expanded',o);});
+links.addEventListener('click',e=>{if(e.target.tagName==='A'){links.classList.remove('open');toggle.setAttribute('aria-expanded','false');}});
+</script>
+</body>
+</html>

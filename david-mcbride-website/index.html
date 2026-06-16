@@ -1,0 +1,672 @@
+<!DOCTYPE html>
+<html lang="en" id="top">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>David McBride — Enterprise Transformation Leader | The Alignment Advantage™</title>
+<meta name="description" content="David McBride helps organizations navigate transformation by aligning trust, leadership, technology, governance, culture, and execution.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&family=Archivo:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy-950:#081120;
+  --navy-900:#0B1830;
+  --navy-800:#12233F;
+  --navy-700:#1B3154;
+  --gold:#C8A24B;
+  --gold-light:#E8CC8F;
+  --gold-deep:#8A6B26;
+  --paper:#F6F3EC;
+  --paper-deep:#EDE8DC;
+  --ink:#16243B;
+  --ink-soft:#48556B;
+  --mist:#D9E2F0;
+  --slate:#93A5C0;
+  --line-gold:rgba(200,162,75,.28);
+  --line-dark:rgba(147,165,192,.18);
+  --line-light:rgba(22,36,59,.14);
+  --display:'Newsreader',Georgia,serif;
+  --sans:'Archivo',-apple-system,'Segoe UI',sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:84px}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation:none!important;transition:none!important}
+}
+body{font-family:var(--sans);font-size:17px;line-height:1.7;color:var(--ink);background:var(--navy-950);overflow-x:clip}
+a{color:inherit}
+img,svg{display:block;max-width:100%}
+.wrap{max-width:1160px;margin:0 auto;padding:0 28px}
+
+/* ---------- type roles ---------- */
+.eyebrow{font:600 12px/1 var(--sans);letter-spacing:.16em;text-transform:uppercase;display:inline-flex;align-items:center;gap:10px}
+.eyebrow::before{content:"";width:26px;height:1px;background:currentColor;opacity:.6}
+h1,h2,h3{font-family:var(--display);font-weight:500;line-height:1.12;letter-spacing:-.01em}
+h2{font-size:clamp(1.9rem,3.4vw,2.7rem);margin:18px 0 22px}
+h3{font-size:1.25rem;line-height:1.3}
+.lede{font-size:1.12rem;max-width:62ch}
+em.gold{font-style:italic;color:var(--gold)}
+
+/* ---------- buttons ---------- */
+.btn{display:inline-flex;align-items:center;gap:10px;font:600 14px/1 var(--sans);letter-spacing:.04em;text-decoration:none;padding:15px 26px;border-radius:3px;cursor:pointer;border:1px solid transparent;transition:background-color .2s ease,color .2s ease,border-color .2s ease,transform .2s ease}
+.btn svg{width:15px;height:15px;flex:none}
+.btn-gold{background:var(--gold);color:var(--navy-950);border-color:var(--gold)}
+.btn-gold:hover{background:var(--gold-light);border-color:var(--gold-light);transform:translateY(-1px)}
+.btn-ghost{background:transparent;color:var(--mist);border-color:rgba(217,226,240,.35)}
+.btn-ghost:hover{border-color:var(--gold);color:var(--gold-light);transform:translateY(-1px)}
+.btn-ink{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.btn-ink:hover{background:var(--navy-700);border-color:var(--navy-700);transform:translateY(-1px)}
+.btn:focus-visible,a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+
+/* ---------- nav ---------- */
+.nav{position:sticky;top:0;z-index:50;background:rgba(8,17,32,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--line-dark)}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;gap:24px;height:68px}
+.brand{font-family:var(--display);font-size:1.18rem;font-weight:600;color:var(--paper);text-decoration:none;letter-spacing:.01em;white-space:nowrap}
+.brand span{color:var(--gold)}
+.nav-links{display:flex;align-items:center;gap:4px;list-style:none}
+.nav-links a{font:500 13.5px/1 var(--sans);color:var(--slate);text-decoration:none;padding:10px 11px;border-radius:3px;transition:color .18s ease;cursor:pointer;white-space:nowrap}
+.nav-links a:hover{color:var(--gold-light)}
+.nav-toggle{display:none;background:none;border:1px solid var(--line-dark);border-radius:3px;padding:9px 11px;cursor:pointer}
+.nav-toggle svg{width:18px;height:18px;stroke:var(--mist)}
+@media (max-width:1024px){
+  .nav-toggle{display:block}
+  .nav-links{display:none;position:absolute;top:68px;left:0;right:0;background:var(--navy-950);flex-direction:column;align-items:stretch;padding:10px 28px 22px;gap:2px;border-bottom:1px solid var(--line-dark)}
+  .nav-links.open{display:flex}
+  .nav-links a{display:block;padding:13px 8px;font-size:15px;border-bottom:1px solid var(--line-dark)}
+}
+
+/* ---------- hero ---------- */
+.hero{position:relative;background:radial-gradient(1100px 600px at 78% 38%,#13294a 0%,var(--navy-900) 46%,var(--navy-950) 100%);color:var(--mist);overflow:hidden;border-bottom:1px solid var(--line-gold)}
+.hero-inner{position:relative;display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);gap:40px;align-items:center;padding-top:110px;padding-bottom:120px}
+.hero h1{font-size:clamp(1.9rem,1rem + 4.6vw,4.3rem);color:var(--paper);font-weight:500}
+.hero h1 .gold-line{color:var(--gold);font-style:italic;font-weight:400}
+.hero .eyebrow{color:var(--gold)}
+.hero-sub{margin:26px 0 38px;font-size:1.15rem;color:var(--slate);max-width:54ch}
+.hero-ctas{display:flex;flex-wrap:wrap;gap:14px}
+.globe-box{position:relative;display:flex;justify-content:center}
+.globe{width:min(440px,100%);height:auto}
+@keyframes drift{from{transform:rotate(0deg)}to{transform:rotate(360deg)}}
+.globe .spin{transform-origin:300px 300px;animation:drift 140s linear infinite}
+@media (max-width:900px){
+  .hero-inner{grid-template-columns:1fr;padding-top:78px;padding-bottom:64px}
+  .globe-box{order:-1}
+  .globe{width:min(280px,72%);opacity:.85}
+}
+
+/* ---------- shared section chrome ---------- */
+section{padding:104px 0}
+.dark{background:var(--navy-950);color:var(--mist)}
+.dark h2{color:var(--paper)}
+.dark .eyebrow{color:var(--gold)}
+.dark p{color:var(--slate)}
+.dark-raised{background:var(--navy-900)}
+.light{background:var(--paper);color:var(--ink)}
+.light .eyebrow{color:var(--gold-deep)}
+.light p{color:var(--ink-soft)}
+.section-head{max-width:720px}
+
+/* ---------- why transformation fails ---------- */
+.fails-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:64px;align-items:center}
+.chain{width:100%;height:auto}
+@media (max-width:900px){.fails-grid{grid-template-columns:1fr;gap:40px}}
+
+/* ---------- framework ---------- */
+.framework-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:56px;align-items:center;margin-top:18px}
+.fw-svg{width:min(560px,100%);height:auto;margin:0 auto}
+.fw-node{cursor:pointer}
+.fw-node circle{transition:fill .2s ease,stroke .2s ease}
+.fw-node text{transition:fill .2s ease}
+.fw-node.active .pillar-dot{fill:var(--gold);stroke:var(--gold-light)}
+.fw-node.active text{fill:var(--navy-950)}
+.pillars{display:flex;flex-direction:column;gap:10px;list-style:none}
+.pillar{border:1px solid var(--line-dark);border-left:3px solid transparent;border-radius:3px;padding:18px 22px;background:rgba(18,35,63,.45);transition:border-color .2s ease,background-color .2s ease;cursor:pointer}
+.pillar h3{color:var(--paper);font-size:1.12rem;margin-bottom:4px;display:flex;align-items:baseline;gap:12px}
+.pillar h3 .pillar-k{font:600 11px/1 var(--sans);letter-spacing:.14em;color:var(--gold);text-transform:uppercase}
+.pillar p{font-size:.97rem;margin:0}
+.pillar.active,.pillar:hover{border-color:var(--line-gold);border-left-color:var(--gold);background:rgba(27,49,84,.7)}
+@media (max-width:980px){.framework-grid{grid-template-columns:1fr}}
+
+/* ---------- research ---------- */
+.research-grid{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:64px;margin-top:8px}
+.research-areas{list-style:none;display:flex;flex-direction:column}
+.research-areas li{display:flex;align-items:center;gap:18px;padding:20px 4px;border-bottom:1px solid var(--line-light);font:500 1.05rem/1.4 var(--sans);color:var(--ink)}
+.research-areas li:first-child{border-top:1px solid var(--line-light)}
+.research-areas .num{font:600 12px/1 var(--sans);letter-spacing:.1em;color:var(--gold-deep);width:30px;flex:none}
+.cred-row{display:flex;gap:34px;flex-wrap:wrap;margin-top:34px}
+.cred{font:600 13px/1.4 var(--sans);letter-spacing:.05em;color:var(--ink)}
+.cred small{display:block;font:500 11px/1 var(--sans);letter-spacing:.13em;text-transform:uppercase;color:var(--gold-deep);margin-bottom:6px}
+@media (max-width:900px){.research-grid{grid-template-columns:1fr;gap:40px}}
+
+/* ---------- insights ---------- */
+.cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px;margin-top:44px}
+.card{border:1px solid var(--line-dark);border-radius:3px;background:rgba(18,35,63,.45);padding:26px 26px 24px;display:flex;flex-direction:column;gap:14px;text-decoration:none;transition:border-color .2s ease,transform .2s ease;cursor:pointer}
+.card:hover{border-color:var(--line-gold);transform:translateY(-3px)}
+.card .tag{font:600 11px/1 var(--sans);letter-spacing:.14em;text-transform:uppercase;color:var(--gold)}
+.card h3{color:var(--paper);font-size:1.18rem}
+.card p{font-size:.96rem;margin:0}
+.card .meta{margin-top:auto;font:500 12.5px/1 var(--sans);color:var(--slate);letter-spacing:.04em}
+.newsletter{margin-top:64px;border:1px solid var(--line-gold);border-radius:3px;background:linear-gradient(120deg,rgba(200,162,75,.10),rgba(200,162,75,.02));padding:44px;display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,.8fr);gap:36px;align-items:center}
+.newsletter h3{font-family:var(--display);font-size:1.7rem;color:var(--paper)}
+.newsletter p{font-size:1rem}
+.nl-form{display:flex;gap:10px}
+.nl-form input{flex:1;min-width:0}
+@media (max-width:900px){.cards{grid-template-columns:1fr}.newsletter{grid-template-columns:1fr;padding:32px}}
+
+/* ---------- forms ---------- */
+input,select,textarea{font:500 15px/1.5 var(--sans);color:var(--paper);background:rgba(8,17,32,.6);border:1px solid var(--line-dark);border-radius:3px;padding:13px 15px;width:100%;transition:border-color .2s ease}
+input::placeholder,textarea::placeholder{color:rgba(147,165,192,.65)}
+input:hover,select:hover,textarea:hover{border-color:var(--line-gold)}
+.light input,.light select,.light textarea{color:var(--ink);background:#fff;border-color:var(--line-light)}
+label{font:600 12px/1 var(--sans);letter-spacing:.12em;text-transform:uppercase;display:block;margin-bottom:8px;color:var(--gold)}
+.light label{color:var(--gold-deep)}
+
+/* ---------- podcast ---------- */
+.podcast-head{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);gap:60px;align-items:center}
+.platforms{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px}
+.platform{display:inline-flex;align-items:center;gap:9px;font:600 13px/1 var(--sans);letter-spacing:.03em;color:var(--mist);text-decoration:none;border:1px solid var(--line-dark);border-radius:3px;padding:12px 18px;transition:border-color .2s ease,color .2s ease;cursor:pointer}
+.platform svg{width:16px;height:16px;fill:var(--gold)}
+.platform:hover{border-color:var(--gold);color:var(--gold-light)}
+.episodes{list-style:none;display:flex;flex-direction:column;border-top:1px solid var(--line-dark)}
+.episode{display:flex;align-items:center;gap:20px;padding:20px 6px;border-bottom:1px solid var(--line-dark);text-decoration:none;transition:background-color .2s ease;cursor:pointer}
+.episode:hover{background:rgba(27,49,84,.4)}
+.episode .play{flex:none;width:38px;height:38px;border:1px solid var(--line-gold);border-radius:50%;display:grid;place-items:center}
+.episode .play svg{width:11px;height:11px;fill:var(--gold);margin-left:2px}
+.episode .ep-t{font:500 1.02rem/1.4 var(--sans);color:var(--paper)}
+.episode .ep-m{font:500 12px/1 var(--sans);letter-spacing:.08em;text-transform:uppercase;color:var(--slate);margin-top:5px}
+@media (max-width:900px){.podcast-head{grid-template-columns:1fr;gap:36px}}
+
+/* ---------- speaking ---------- */
+.speak-grid{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);gap:64px;align-items:start;margin-top:10px}
+.topics{list-style:none;display:flex;flex-direction:column}
+.topics li{display:flex;gap:18px;align-items:baseline;padding:19px 4px;border-bottom:1px solid var(--line-light);font:500 1.08rem/1.45 var(--sans)}
+.topics li:first-child{border-top:1px solid var(--line-light)}
+.topics .num{font:600 12px/1 var(--sans);letter-spacing:.08em;color:var(--gold-deep);width:30px;flex:none}
+.speak-side{display:flex;flex-direction:column;gap:26px}
+.speaker-card{border:1px solid var(--line-light);border-radius:3px;background:#fff;padding:28px;display:flex;gap:20px;align-items:center}
+.headshot{flex:none;width:92px;height:92px;border-radius:50%;background:var(--navy-900);color:var(--gold);display:grid;place-items:center;font-family:var(--display);font-size:1.7rem;border:2px solid var(--gold)}
+.speaker-card h3{font-size:1.15rem;margin-bottom:4px}
+.speaker-card p{font-size:.92rem;margin:0}
+.inquiry{border:1px solid var(--line-light);border-radius:3px;background:#fff;padding:28px;display:flex;flex-direction:column;gap:18px}
+.inquiry h3{font-size:1.15rem}
+@media (max-width:900px){.speak-grid{grid-template-columns:1fr}}
+
+/* ---------- book ---------- */
+.book-grid{display:grid;grid-template-columns:minmax(0,.42fr) minmax(0,.58fr);gap:70px;align-items:center}
+.book-cover{justify-self:center;width:min(300px,80%);aspect-ratio:2/3;border:1px solid var(--line-gold);border-radius:4px;background:linear-gradient(160deg,var(--navy-800),var(--navy-950));box-shadow:24px 28px 60px rgba(0,0,0,.45);display:flex;flex-direction:column;justify-content:space-between;padding:34px 28px;position:relative}
+.book-cover::before{content:"";position:absolute;inset:10px;border:1px solid rgba(200,162,75,.35);border-radius:2px;pointer-events:none}
+.book-cover .bc-k{font:600 10.5px/1 var(--sans);letter-spacing:.22em;text-transform:uppercase;color:var(--gold)}
+.book-cover .bc-t{font-family:var(--display);font-size:1.85rem;line-height:1.15;color:var(--paper)}
+.book-cover .bc-a{font:600 12px/1.5 var(--sans);letter-spacing:.12em;text-transform:uppercase;color:var(--slate)}
+.coming{display:inline-block;font:600 12px/1 var(--sans);letter-spacing:.18em;text-transform:uppercase;color:var(--gold);border:1px solid var(--line-gold);border-radius:3px;padding:9px 14px;margin-bottom:22px}
+.book-copy h2{margin-top:6px}
+.book-sub{font-family:var(--display);font-style:italic;font-size:1.3rem;color:var(--gold-light);margin-bottom:20px}
+.waitlist{display:flex;gap:10px;margin-top:32px;max-width:480px}
+.waitlist input{flex:1;min-width:0}
+.book-note{font:500 13px/1.6 var(--sans);color:var(--slate);margin-top:14px}
+@media (max-width:900px){.book-grid{grid-template-columns:1fr;gap:48px}}
+
+/* ---------- about ---------- */
+.about-grid{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);gap:64px;align-items:start}
+.about p+p{margin-top:18px}
+.about-list{list-style:none;border:1px solid var(--line-light);border-radius:3px;background:#fff}
+.about-list li{display:flex;align-items:center;gap:16px;padding:17px 22px;border-bottom:1px solid var(--line-light);font:500 .98rem/1.4 var(--sans)}
+.about-list li:last-child{border-bottom:none}
+.about-list .mark{flex:none;width:8px;height:8px;border-radius:50%;background:var(--gold)}
+@media (max-width:900px){.about-grid{grid-template-columns:1fr;gap:40px}}
+
+/* ---------- contact ---------- */
+.contact-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px;margin:46px 0 56px}
+.c-opt{border:1px solid var(--line-dark);border-radius:3px;padding:24px 22px;background:rgba(18,35,63,.45);text-decoration:none;transition:border-color .2s ease,transform .2s ease;cursor:pointer}
+.c-opt:hover{border-color:var(--line-gold);transform:translateY(-3px)}
+.c-opt h3{color:var(--paper);font-size:1.05rem;margin:14px 0 6px}
+.c-opt p{font-size:.9rem;margin:0}
+.c-opt svg{width:22px;height:22px;stroke:var(--gold);fill:none;stroke-width:1.5}
+.contact-form{max-width:680px;display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.contact-form .full{grid-column:1/-1}
+@media (max-width:900px){.contact-grid{grid-template-columns:1fr 1fr}}
+@media (max-width:560px){.contact-grid{grid-template-columns:1fr}.contact-form{grid-template-columns:1fr}}
+
+/* ---------- footer ---------- */
+footer{background:var(--navy-950);border-top:1px solid var(--line-gold);padding:54px 0 44px;color:var(--slate)}
+.foot{display:flex;justify-content:space-between;gap:30px;flex-wrap:wrap;align-items:flex-start}
+.foot .brand{font-size:1.3rem}
+.foot-tag{font:500 13.5px/1.6 var(--sans);max-width:40ch;margin-top:10px}
+.foot-nav{display:flex;gap:6px 22px;flex-wrap:wrap;list-style:none}
+.foot-nav a{font:500 13px/1 var(--sans);color:var(--slate);text-decoration:none;transition:color .18s ease;cursor:pointer}
+.foot-nav a:hover{color:var(--gold-light)}
+.foot-base{margin-top:38px;padding-top:22px;border-top:1px solid var(--line-dark);font:500 12.5px/1.6 var(--sans);display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+</style>
+</head>
+<body>
+
+<!-- ============ NAV ============ -->
+<nav class="nav" aria-label="Primary">
+  <div class="wrap nav-inner">
+    <a class="brand" href="#top">David <span>McBride</span></a>
+    <button class="nav-toggle" aria-expanded="false" aria-controls="nav-links" aria-label="Toggle navigation">
+      <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+    </button>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="#top">Home</a></li>
+      <li><a href="#framework">The Alignment Advantage</a></li>
+      <li><a href="#research">Research</a></li>
+      <li><a href="#insights">Insights</a></li>
+      <li><a href="#podcast">Podcast</a></li>
+      <li><a href="#speaking">Speaking</a></li>
+      <li><a href="#book">Book</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- ============ HERO ============ -->
+<header class="hero">
+  <div class="wrap hero-inner">
+    <div>
+      <span class="eyebrow">Enterprise Transformation Leader · Doctoral Researcher</span>
+      <h1>Trust. Technology.<br><span class="gold-line">Organizational Alignment.</span></h1>
+      <p class="hero-sub">Helping organizations navigate transformation by aligning leadership, culture, governance, and execution in an AI-driven world.</p>
+      <div class="hero-ctas">
+        <a class="btn btn-gold" href="#framework">Explore The Alignment Advantage
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></a>
+        <a class="btn btn-ghost" href="#research">Research &amp; Insights</a>
+      </div>
+    </div>
+    <div class="globe-box" aria-hidden="true">
+      <svg class="globe" viewBox="0 0 600 600" xmlns="http://www.w3.org/2000/svg">
+        <g class="spin" stroke="#C8A24B" fill="none" stroke-width="1">
+          <circle cx="300" cy="300" r="230" stroke-opacity=".55"/>
+          <ellipse cx="300" cy="300" rx="230" ry="92" stroke-opacity=".3"/>
+          <ellipse cx="300" cy="300" rx="230" ry="168" stroke-opacity=".22"/>
+          <ellipse cx="300" cy="300" rx="92" ry="230" stroke-opacity=".3"/>
+          <ellipse cx="300" cy="300" rx="168" ry="230" stroke-opacity=".22"/>
+          <line x1="70" y1="300" x2="530" y2="300" stroke-opacity=".35"/>
+          <line x1="300" y1="70" x2="300" y2="530" stroke-opacity=".35"/>
+        </g>
+        <g fill="#C8A24B">
+          <circle cx="300" cy="70" r="5"/>
+          <circle cx="518" cy="225" r="5"/>
+          <circle cx="435" cy="486" r="5"/>
+          <circle cx="165" cy="486" r="5"/>
+          <circle cx="82" cy="225" r="5"/>
+        </g>
+        <g stroke="#C8A24B" stroke-opacity=".45" stroke-width="1" fill="none">
+          <path d="M300 70 518 225 435 486 165 486 82 225Z"/>
+        </g>
+      </svg>
+    </div>
+  </div>
+</header>
+
+<main>
+
+<!-- ============ SECTION 2: WHY TRANSFORMATION FAILS ============ -->
+<section class="dark-raised dark" id="why" aria-labelledby="why-h">
+  <div class="wrap fails-grid">
+    <div>
+      <span class="eyebrow">The Problem</span>
+      <h2 id="why-h">Why Transformation Fails</h2>
+      <p class="lede">Organizations rarely fail because of strategy.</p>
+      <p style="margin-top:16px">More often, transformation efforts fail because leadership, technology, culture, customer expectations, and execution become <em class="gold">misaligned</em>.</p>
+      <p style="margin-top:16px">The Alignment Advantage explores how organizations strengthen trust, improve alignment, and drive sustainable transformation in increasingly complex environments.</p>
+    </div>
+    <div>
+      <svg class="chain" viewBox="0 0 560 360" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Five connected circles: Trust, Leadership, Technology, Governance, Execution">
+        <g stroke="#C8A24B" stroke-opacity=".5" stroke-width="1.2" fill="none">
+          <path d="M280 78 132 168M280 78 428 168M132 168 206 290M428 168 354 290M206 290 354 290M132 168 428 168M280 78 206 290M280 78 354 290M132 168 354 290M428 168 206 290"/>
+        </g>
+        <g font-family="Archivo,sans-serif" font-size="13.5" font-weight="600" text-anchor="middle">
+          <g><circle cx="280" cy="78" r="46" fill="#12233F" stroke="#C8A24B" stroke-width="1.4"/><text x="280" y="83" fill="#F6F3EC">Trust</text></g>
+          <g><circle cx="132" cy="168" r="46" fill="#12233F" stroke="#C8A24B" stroke-width="1.4"/><text x="132" y="173" fill="#F6F3EC">Leadership</text></g>
+          <g><circle cx="428" cy="168" r="46" fill="#12233F" stroke="#C8A24B" stroke-width="1.4"/><text x="428" y="173" fill="#F6F3EC">Technology</text></g>
+          <g><circle cx="206" cy="290" r="46" fill="#12233F" stroke="#C8A24B" stroke-width="1.4"/><text x="206" y="295" fill="#F6F3EC">Governance</text></g>
+          <g><circle cx="354" cy="290" r="46" fill="#12233F" stroke="#C8A24B" stroke-width="1.4"/><text x="354" y="295" fill="#F6F3EC">Execution</text></g>
+        </g>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SECTION 3: THE ALIGNMENT ADVANTAGE ============ -->
+<section class="dark" id="framework" aria-labelledby="fw-h">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">The Framework</span>
+      <h2 id="fw-h">The Alignment Advantage™</h2>
+      <p class="lede">One framework connects everything on this platform: five pillars that determine whether transformation succeeds or fails.</p>
+    </div>
+    <div class="framework-grid">
+      <div>
+        <svg class="fw-svg" viewBox="0 0 600 600" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="The Alignment Advantage framework: Trust, Leadership, Technology, Governance, and Execution surrounding a central core">
+          <g stroke="#C8A24B" stroke-opacity=".4" stroke-width="1.1" fill="none">
+            <path d="M300 300 300 88M300 300 502 235M300 300 425 472M300 300 175 472M300 300 98 235"/>
+            <path d="M300 88 502 235 425 472 175 472 98 235Z" stroke-opacity=".55"/>
+          </g>
+          <circle cx="300" cy="300" r="96" fill="#0B1830" stroke="#C8A24B" stroke-width="1.6"/>
+          <circle cx="300" cy="300" r="106" fill="none" stroke="#C8A24B" stroke-opacity=".3" stroke-width="1"/>
+          <g text-anchor="middle">
+            <text x="300" y="284" font-family="Newsreader,Georgia,serif" font-size="25" font-style="italic" fill="#E8CC8F">The Alignment</text>
+            <text x="300" y="316" font-family="Newsreader,Georgia,serif" font-size="25" font-style="italic" fill="#E8CC8F">Advantage™</text>
+          </g>
+          <g font-family="Archivo,sans-serif" font-size="14" font-weight="600" text-anchor="middle">
+            <g class="fw-node" data-pillar="trust"><circle class="pillar-dot" cx="300" cy="88" r="52" fill="#12233F" stroke="#C8A24B" stroke-width="1.4"/><text x="300" y="93" fill="#F6F3EC">Trust</text></g>
+            <g class="fw-node" data-pillar="leadership"><circle class="pillar-dot" cx="502" cy="235" r="52" fill="#12233F" stroke="#C8A24B" stroke-width="1.4"/><text x="502" y="240" fill="#F6F3EC">Leadership</text></g>
+            <g class="fw-node" data-pillar="technology"><circle class="pillar-dot" cx="425" cy="472" r="52" fill="#12233F" stroke="#C8A24B" stroke-width="1.4"/><text x="425" y="477" fill="#F6F3EC">Technology</text></g>
+            <g class="fw-node" data-pillar="governance"><circle class="pillar-dot" cx="175" cy="472" r="52" fill="#12233F" stroke="#C8A24B" stroke-width="1.4"/><text x="175" y="477" fill="#F6F3EC">Governance</text></g>
+            <g class="fw-node" data-pillar="execution"><circle class="pillar-dot" cx="98" cy="235" r="52" fill="#12233F" stroke="#C8A24B" stroke-width="1.4"/><text x="98" y="240" fill="#F6F3EC">Execution</text></g>
+          </g>
+        </svg>
+      </div>
+      <ul class="pillars">
+        <li class="pillar" data-pillar="trust">
+          <h3><span class="pillar-k">Pillar 01</span>Trust</h3>
+          <p>The foundation. Stakeholders move with change only when leadership behavior, brand promises, and daily experience consistently match.</p>
+        </li>
+        <li class="pillar" data-pillar="leadership">
+          <h3><span class="pillar-k">Pillar 02</span>Leadership</h3>
+          <p>Consistent leadership signals — what leaders say, fund, measure, and model — determine whether a transformation is believed or quietly resisted.</p>
+        </li>
+        <li class="pillar" data-pillar="technology">
+          <h3><span class="pillar-k">Pillar 03</span>Technology</h3>
+          <p>Technology, including AI, creates value only when it is aligned with the operating model and the people expected to use it.</p>
+        </li>
+        <li class="pillar" data-pillar="governance">
+          <h3><span class="pillar-k">Pillar 04</span>Governance</h3>
+          <p>Clear decision rights, accountability, and oversight keep transformation honest — especially as AI raises the stakes of getting it wrong.</p>
+        </li>
+        <li class="pillar" data-pillar="execution">
+          <h3><span class="pillar-k">Pillar 05</span>Execution</h3>
+          <p>Strategy becomes real through disciplined delivery. Execution converts aligned intent into measurable, sustainable change.</p>
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SECTION 4: RESEARCH ============ -->
+<section class="light" id="research" aria-labelledby="research-h">
+  <div class="wrap">
+    <div class="research-grid">
+      <div>
+        <span class="eyebrow">Research</span>
+        <h2 id="research-h">Researching Trust &amp; Organizational Alignment</h2>
+        <p>Executive Doctorate research focused on trust, authenticity, leadership consistency, and stakeholder alignment during organizational transformation.</p>
+        <div class="cred-row">
+          <div class="cred"><small>Doctoral Research</small>Penn State University</div>
+          <div class="cred"><small>Enterprise Practice</small>Accenture</div>
+        </div>
+      </div>
+      <div>
+        <ul class="research-areas">
+          <li><span class="num">01</span>Brand Trust</li>
+          <li><span class="num">02</span>Authenticity</li>
+          <li><span class="num">03</span>Leadership Consistency</li>
+          <li><span class="num">04</span>Organizational Alignment</li>
+          <li><span class="num">05</span>Transformation Success</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SECTION 5: INSIGHTS ============ -->
+<section class="dark" id="insights" aria-labelledby="insights-h">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Insights</span>
+      <h2 id="insights-h">Latest Thinking</h2>
+      <p class="lede">Articles, newsletter essays, and research insights on trust, technology, leadership, and transformation.</p>
+    </div>
+    <div class="cards">
+      <a class="card" href="#insights">
+        <span class="tag">Article</span>
+        <h3>Strategy Isn't the Problem. Misalignment Is.</h3>
+        <p>Why well-funded transformation programs stall — and what the first signals of misalignment look like.</p>
+        <span class="meta">Latest article</span>
+      </a>
+      <a class="card" href="#insights">
+        <span class="tag">Newsletter</span>
+        <h3>Trust Is Infrastructure in an AI-Driven Enterprise</h3>
+        <p>As AI reshapes decisions and work, trust becomes an operating requirement — not a soft value.</p>
+        <span class="meta">From the newsletter</span>
+      </a>
+      <a class="card" href="#insights">
+        <span class="tag">Research Insight</span>
+        <h3>Leadership Consistency: What Stakeholders Actually Watch</h3>
+        <p>Early findings on how authenticity and consistent leadership behavior shape stakeholder alignment during change.</p>
+        <span class="meta">Research insight</span>
+      </a>
+    </div>
+    <div class="newsletter">
+      <div>
+        <span class="eyebrow">The Newsletter</span>
+        <h3 style="margin-top:14px">The Alignment Advantage</h3>
+        <p style="margin-top:10px">Insights on Trust, Technology, Leadership, and Transformation in an AI-Driven World.</p>
+      </div>
+      <form class="nl-form" action="#" method="post" aria-label="Newsletter signup">
+        <input type="email" name="email" placeholder="Work email" aria-label="Email address" required>
+        <button class="btn btn-gold" type="submit">Subscribe</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SECTION 6: PODCAST ============ -->
+<section class="dark-raised dark" id="podcast" aria-labelledby="podcast-h">
+  <div class="wrap podcast-head">
+    <div>
+      <span class="eyebrow">The Podcast</span>
+      <h2 id="podcast-h">Branded in a Divided World</h2>
+      <p class="lede">Exploring trust, leadership, organizational alignment, and transformation in a rapidly changing world.</p>
+      <div class="platforms">
+        <a class="platform" href="#podcast"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20Zm4.36 14.5a.74.74 0 0 1-1.02.26c-2.8-1.72-6.33-2.1-10.49-1.15a.75.75 0 0 1-.33-1.46c4.55-1.04 8.45-.6 11.58 1.32.35.22.46.68.26 1.03Zm1.23-2.86a.93.93 0 0 1-1.28.31c-3.2-1.97-8.08-2.54-11.87-1.39a.93.93 0 1 1-.54-1.79c4.33-1.31 9.7-.67 13.38 1.59.43.27.57.84.31 1.28Zm.11-2.98C13.92 8.4 7.58 8.19 3.91 9.3a1.12 1.12 0 1 1-.65-2.14C7.47 5.88 14.47 6.13 18.89 8.75a1.12 1.12 0 0 1-1.19 1.91Z"/></svg>Spotify</a>
+        <a class="platform" href="#podcast"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20Zm0 4.5a3.4 3.4 0 0 1 3.4 3.4c0 1.13-.55 2.13-1.4 2.75v.01c1.96.7 3.4 2.5 3.5 4.66h-1.6a3.94 3.94 0 0 0-7.8 0H6.5a5.07 5.07 0 0 1 3.5-4.67 3.4 3.4 0 0 1 2-6.15Zm0 1.6a1.8 1.8 0 1 0 0 3.6 1.8 1.8 0 0 0 0-3.6Zm0 7.4c.7 0 1.26.56 1.26 1.25 0 .27-.05.49-.16.86l-.6 2.1a.52.52 0 0 1-1 0l-.6-2.1c-.11-.37-.16-.59-.16-.86 0-.69.57-1.25 1.26-1.25Z"/></svg>Apple Podcasts</a>
+        <a class="platform" href="#podcast"><svg viewBox="0 0 24 24"><path d="M21.58 7.19a2.5 2.5 0 0 0-1.77-1.77C18.25 5 12 5 12 5s-6.25 0-7.81.42A2.5 2.5 0 0 0 2.42 7.2 26.2 26.2 0 0 0 2 12c0 1.63.14 3.24.42 4.81a2.5 2.5 0 0 0 1.77 1.77C5.75 19 12 19 12 19s6.25 0 7.81-.42a2.5 2.5 0 0 0 1.77-1.77c.28-1.57.42-3.18.42-4.81 0-1.63-.14-3.24-.42-4.81ZM10 15.13V8.87L15.25 12 10 15.13Z"/></svg>YouTube</a>
+      </div>
+    </div>
+    <div>
+      <span class="eyebrow" style="margin-bottom:18px">Featured Episodes</span>
+      <ul class="episodes" style="margin-top:18px">
+        <li><a class="episode" href="#podcast">
+          <span class="play"><svg viewBox="0 0 12 12"><path d="M1 0v12l10-6L1 0Z"/></svg></span>
+          <span><span class="ep-t">Why Transformation Fails Before It Begins</span><br><span class="ep-m">Episode · Transformation</span></span>
+        </a></li>
+        <li><a class="episode" href="#podcast">
+          <span class="play"><svg viewBox="0 0 12 12"><path d="M1 0v12l10-6L1 0Z"/></svg></span>
+          <span><span class="ep-t">Trust as the Operating System of Change</span><br><span class="ep-m">Episode · Trust &amp; Leadership</span></span>
+        </a></li>
+        <li><a class="episode" href="#podcast">
+          <span class="play"><svg viewBox="0 0 12 12"><path d="M1 0v12l10-6L1 0Z"/></svg></span>
+          <span><span class="ep-t">Aligning AI with the Humans Who Use It</span><br><span class="ep-m">Episode · AI &amp; Governance</span></span>
+        </a></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SECTION 7: SPEAKING ============ -->
+<section class="light" id="speaking" aria-labelledby="speaking-h">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Speaking</span>
+      <h2 id="speaking-h">Speaking Topics</h2>
+      <p class="lede">Keynotes and executive sessions on why transformation succeeds in some organizations and fails in others.</p>
+    </div>
+    <div class="speak-grid">
+      <div>
+        <ul class="topics">
+          <li><span class="num">01</span>The Alignment Advantage</li>
+          <li><span class="num">02</span>Why Transformation Fails</li>
+          <li><span class="num">03</span>Trust in an AI-Driven World</li>
+          <li><span class="num">04</span>Leadership Consistency During Change</li>
+          <li><span class="num">05</span>Brand Trust &amp; Organizational Alignment</li>
+          <li><span class="num">06</span>Building Alignment at Scale</li>
+        </ul>
+      </div>
+      <div class="speak-side">
+        <div class="speaker-card">
+          <div class="headshot" aria-hidden="true">DM</div>
+          <div>
+            <h3>David McBride</h3>
+            <p>Enterprise Transformation Leader, Executive DBA Researcher, Speaker, and Author. David speaks to executive audiences on trust, alignment, and leading transformation in an AI-driven world.</p>
+          </div>
+        </div>
+        <form class="inquiry" action="#" method="post" aria-label="Speaking inquiry">
+          <h3>Speaking Inquiry</h3>
+          <div><label for="sp-name">Name</label><input id="sp-name" name="name" type="text" placeholder="Your name" required></div>
+          <div><label for="sp-org">Organization &amp; Event</label><input id="sp-org" name="org" type="text" placeholder="Company, conference, or event"></div>
+          <div><label for="sp-msg">Details</label><textarea id="sp-msg" name="message" rows="3" placeholder="Audience, date, and topic of interest"></textarea></div>
+          <button class="btn btn-ink" type="submit">Send inquiry</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SECTION 8: BOOK ============ -->
+<section class="dark" id="book" aria-labelledby="book-h">
+  <div class="wrap book-grid">
+    <div>
+      <div class="book-cover" role="img" aria-label="Placeholder cover for the forthcoming book The Alignment Advantage">
+        <span class="bc-k">Coming 2027</span>
+        <span class="bc-t">The Alignment Advantage</span>
+        <span class="bc-a">David McBride</span>
+      </div>
+    </div>
+    <div class="book-copy">
+      <span class="coming">Coming 2027</span>
+      <span class="eyebrow" style="display:block">The Book</span>
+      <h2 id="book-h">The Alignment Advantage</h2>
+      <p class="book-sub">Why Organizations Succeed or Fail During Transformation</p>
+      <p>Drawing on executive leadership experience, doctoral research, and real-world transformation programs, <em class="gold">The Alignment Advantage</em> explores how trust, leadership, technology, and organizational alignment shape successful organizational change.</p>
+      <form class="waitlist" action="#" method="post" aria-label="Book waitlist">
+        <input type="email" name="email" placeholder="Email for the waitlist" aria-label="Email address" required>
+        <button class="btn btn-gold" type="submit">Join the waitlist</button>
+      </form>
+      <p class="book-note">Join the waitlist for book updates, excerpts, and launch news.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SECTION 9: ABOUT ============ -->
+<section class="light" id="about" aria-labelledby="about-h">
+  <div class="wrap about-grid">
+    <div class="about">
+      <span class="eyebrow">About</span>
+      <h2 id="about-h">About David</h2>
+      <p>David McBride is an Enterprise Transformation Leader, Executive DBA Researcher, Speaker, and Author focused on helping organizations align trust, leadership, technology, culture, and execution during periods of change.</p>
+      <p>Through his work at Accenture, doctoral research at Penn State University, and thought leadership platform, David explores why transformation succeeds in some organizations and fails in others — and what leaders can do to create sustainable alignment in an increasingly complex world.</p>
+    </div>
+    <div>
+      <ul class="about-list">
+        <li><span class="mark"></span>Accenture</li>
+        <li><span class="mark"></span>Penn State University</li>
+        <li><span class="mark"></span>Transformation Leadership</li>
+        <li><span class="mark"></span>Research</li>
+        <li><span class="mark"></span>Speaking</li>
+        <li><span class="mark"></span>Future Book — <em>The Alignment Advantage</em>&nbsp;(2027)</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CONTACT ============ -->
+<section class="dark-raised dark" id="contact" aria-labelledby="contact-h">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Contact</span>
+      <h2 id="contact-h">Start a Conversation</h2>
+      <p class="lede">Choose the path that fits — every inquiry goes directly to David.</p>
+    </div>
+    <div class="contact-grid">
+      <a class="c-opt" href="#speaking">
+        <svg viewBox="0 0 24 24"><path d="M12 15a3.5 3.5 0 0 0 3.5-3.5v-5a3.5 3.5 0 1 0-7 0v5A3.5 3.5 0 0 0 12 15Zm6-3.5a6 6 0 0 1-12 0M12 18v3.5"/></svg>
+        <h3>Speaking Inquiry</h3><p>Keynotes, executive sessions, and panels.</p>
+      </a>
+      <a class="c-opt" href="#research">
+        <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="6.5"/><path d="m20 20-4.4-4.4"/></svg>
+        <h3>Research Collaboration</h3><p>Academic and industry research on trust and alignment.</p>
+      </a>
+      <a class="c-opt" href="#podcast">
+        <svg viewBox="0 0 24 24"><rect x="4" y="5" width="16" height="13" rx="2"/><path d="m9 9.5 5 2.5-5 2.5v-5Z"/></svg>
+        <h3>Podcast Guest Requests</h3><p>Join a conversation on Branded in a Divided World.</p>
+      </a>
+      <a class="c-opt" href="#contact-form">
+        <svg viewBox="0 0 24 24"><rect x="3.5" y="5.5" width="17" height="13" rx="2"/><path d="m4.5 7 7.5 6 7.5-6"/></svg>
+        <h3>General Contact</h3><p>Everything else — questions, media, and ideas.</p>
+      </a>
+    </div>
+    <form class="contact-form" id="contact-form" action="#" method="post" aria-label="Contact form">
+      <div><label for="ct-name">Name</label><input id="ct-name" name="name" type="text" placeholder="Your name" required></div>
+      <div><label for="ct-email">Email</label><input id="ct-email" name="email" type="email" placeholder="you@company.com" required></div>
+      <div class="full"><label for="ct-type">Inquiry Type</label>
+        <select id="ct-type" name="type">
+          <option>Speaking Inquiry</option>
+          <option>Research Collaboration</option>
+          <option>Podcast Guest Request</option>
+          <option selected>General Contact</option>
+        </select>
+      </div>
+      <div class="full"><label for="ct-msg">Message</label><textarea id="ct-msg" name="message" rows="4" placeholder="How can David help?"></textarea></div>
+      <div class="full"><button class="btn btn-gold" type="submit">Send message</button></div>
+    </form>
+  </div>
+</section>
+
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="wrap">
+    <div class="foot">
+      <div>
+        <a class="brand" href="#top">David <span>McBride</span></a>
+        <p class="foot-tag">Helping organizations navigate transformation by aligning trust, leadership, technology, governance, culture, and execution.</p>
+      </div>
+      <ul class="foot-nav">
+        <li><a href="#framework">The Alignment Advantage</a></li>
+        <li><a href="#research">Research</a></li>
+        <li><a href="#insights">Insights</a></li>
+        <li><a href="#podcast">Podcast</a></li>
+        <li><a href="#speaking">Speaking</a></li>
+        <li><a href="#book">Book</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+    <div class="foot-base">
+      <span>© <span id="year">2026</span> David McBride. The Alignment Advantage™.</span>
+      <span>Trust · Leadership · Technology · Governance · Execution</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+// mobile nav
+const toggle=document.querySelector('.nav-toggle');
+const links=document.getElementById('nav-links');
+toggle.addEventListener('click',()=>{
+  const open=links.classList.toggle('open');
+  toggle.setAttribute('aria-expanded',open);
+});
+links.addEventListener('click',e=>{
+  if(e.target.tagName==='A'){links.classList.remove('open');toggle.setAttribute('aria-expanded','false');}
+});
+
+// framework: hover/focus on a node or card highlights both
+const sync=(name,on)=>{
+  document.querySelectorAll(`[data-pillar="${name}"]`).forEach(el=>el.classList.toggle('active',on));
+};
+document.querySelectorAll('[data-pillar]').forEach(el=>{
+  const name=el.dataset.pillar;
+  el.addEventListener('mouseenter',()=>sync(name,true));
+  el.addEventListener('mouseleave',()=>sync(name,false));
+});
+
+document.getElementById('year').textContent=new Date().getFullYear();
+</script>
+</body>
+</html>
